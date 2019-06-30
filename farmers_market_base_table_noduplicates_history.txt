@@ -1,0 +1,577 @@
+[
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Website",
+    "columnName": "Website"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Facebook",
+    "columnName": "Facebook"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Twitter",
+    "columnName": "Twitter"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Youtube",
+    "columnName": "Youtube"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column OtherMedia",
+    "columnName": "OtherMedia"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Season1Date",
+    "columnName": "Season1Date"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Season1Time",
+    "columnName": "Season1Time"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Season2Date",
+    "columnName": "Season2Date"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Season2Time",
+    "columnName": "Season2Time"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Season3Date",
+    "columnName": "Season3Date"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Season3Time",
+    "columnName": "Season3Time"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Season4Date",
+    "columnName": "Season4Date"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Season4Time",
+    "columnName": "Season4Time"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Location",
+    "columnName": "Location"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Credit",
+    "columnName": "Credit"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column WIC",
+    "columnName": "WIC"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column WICcash",
+    "columnName": "WICcash"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column SFMNP",
+    "columnName": "SFMNP"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column SNAP",
+    "columnName": "SNAP"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Organic",
+    "columnName": "Organic"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Bakedgoods",
+    "columnName": "Bakedgoods"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Cheese",
+    "columnName": "Cheese"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Crafts",
+    "columnName": "Crafts"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Flowers",
+    "columnName": "Flowers"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Eggs",
+    "columnName": "Eggs"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Seafood",
+    "columnName": "Seafood"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Herbs",
+    "columnName": "Herbs"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Vegetables",
+    "columnName": "Vegetables"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Honey",
+    "columnName": "Honey"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Jams",
+    "columnName": "Jams"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Maple",
+    "columnName": "Maple"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Meat",
+    "columnName": "Meat"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Nursery",
+    "columnName": "Nursery"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Nuts",
+    "columnName": "Nuts"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Plants",
+    "columnName": "Plants"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Poultry",
+    "columnName": "Poultry"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Prepared",
+    "columnName": "Prepared"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Soap",
+    "columnName": "Soap"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Trees",
+    "columnName": "Trees"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Wine",
+    "columnName": "Wine"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Coffee",
+    "columnName": "Coffee"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Beans",
+    "columnName": "Beans"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Fruits",
+    "columnName": "Fruits"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Grains",
+    "columnName": "Grains"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Juices",
+    "columnName": "Juices"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Mushrooms",
+    "columnName": "Mushrooms"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column PetFood",
+    "columnName": "PetFood"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Tofu",
+    "columnName": "Tofu"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column WildHarvested",
+    "columnName": "WildHarvested"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column updateTime",
+    "columnName": "updateTime"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column FMID using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FMID",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column FMID using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "FMID",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MarketName using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MarketName",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MarketName using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MarketName",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MarketName using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MarketName",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column street using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "street",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column street using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "street",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column street using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "street",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column city using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "city",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column city using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "city",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column city using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "city",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column County using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "County",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column County using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "County",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column County using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "County",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column State using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "State",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column State using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "State",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column State using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "State",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column zip using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "zip",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column zip using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "zip",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column x using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "x",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column x using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "x",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column x using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "x",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column y using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "y",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column y using expression value.replace(/\\s+/,' ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "y",
+    "expression": "value.replace(/\\s+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column y using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "y",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]
