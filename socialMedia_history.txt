@@ -1,0 +1,98 @@
+[
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "FMID",
+      "MarketName",
+      "Website",
+      "Facebook",
+      "Twitter",
+      "Youtube",
+      "OtherMedia",
+      "SNAP"
+    ]
+  },
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "FMID",
+      "MarketName",
+      "Website",
+      "Facebook",
+      "Twitter",
+      "Youtube",
+      "OtherMedia"
+    ]
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Website",
+          "expression": "value",
+          "columnName": "Website",
+          "invert": false,
+          "selection": [],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": true,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Facebook",
+          "expression": "value",
+          "columnName": "Facebook",
+          "invert": false,
+          "selection": [],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": true,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Twitter",
+          "expression": "value",
+          "columnName": "Twitter",
+          "invert": false,
+          "selection": [],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": true,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "OtherMedia",
+          "expression": "value",
+          "columnName": "OtherMedia",
+          "invert": false,
+          "selection": [],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": true,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    }
+  }
+]
