@@ -949,5 +949,21 @@
     "description": "Move column Location to position 2",
     "columnName": "Location",
     "index": 2
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column MarketName",
+    "columnName": "MarketName"
+  },
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "FMID",
+      "season",
+      "seasonOpenning",
+      "seasonClosing",
+      "seasonTime"
+    ]
   }
 ]

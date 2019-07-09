@@ -94,5 +94,10 @@
       ],
       "mode": "row-based"
     }
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column MarketName",
+    "columnName": "MarketName"
   }
 ]

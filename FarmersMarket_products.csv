@@ -604,8 +604,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1001879,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1008121,,Y,,Y,Y,Y,,Y,Y,Y,Y,,,,Y,Y,Y,,Y,Y,,Y,,Y,,,,Y,,
 1009854,,Y,,Y,Y,Y,,,Y,Y,Y,,,,,Y,,Y,Y,,,,,Y,,,,,,
-1008122,,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,Y,,,Y,Y,Y,Y,,Y,Y,,Y,,Y,Y,,,
-1019153,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,,Y,,Y,Y,,Y,Y,,Y,,,,,,Y
+1019591,,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,Y,,,Y,,Y,Y,,Y,Y,,Y,,,,,,
 1018044,,Y,,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,,Y,Y,,Y,,,,,Y,,Y,,Y,,
 1000443,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1010217,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,Y,,Y,,Y,Y,Y,,Y
@@ -1565,7 +1564,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1002190,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1009853,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,Y,Y,Y,Y,,,,Y,Y,,Y,Y,,,
 1001263,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-1019518,,Y,,,,,,Y,Y,,Y,,,,,Y,,,,,,,,Y,,,,,,
+1019592,,Y,,,,,,,Y,,Y,,,,,Y,,,,,,,,,,,,,,
 1010233,Y,Y,,,,,Y,,Y,Y,,,,,Y,,,Y,Y,,,Y,,Y,,Y,,,,
 1002010,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1007154,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -2424,7 +2423,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1009320,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1009864,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,,Y,Y,Y,,Y,Y,,Y,,Y,Y,,,
 1007457,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-1003568,,Y,Y,Y,Y,,Y,Y,Y,Y,Y,,,,Y,Y,,Y,Y,,,,,,,,,,,
+1003568,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1000189,Y,,,,,,,,Y,,,,,,,,,,,,,,,,,,,,,
 1005654,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1000494,,,,,Y,Y,,,Y,,,,,Y,,Y,,,Y,,,,,,,,,,,
@@ -2861,6 +2860,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1001599,Y,,,,,,,Y,Y,Y,,,,,,,,,Y,,,,Y,Y,,,,,,
 1009250,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1012645,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y
+1019600,,Y,,Y,Y,Y,,,Y,Y,Y,,Y,,,Y,,Y,Y,,Y,Y,,Y,,Y,,,,
 1001581,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1007678,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,,,,Y,,,,Y,,,,Y,,,,,,
 1001266,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -2977,7 +2977,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1000135,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1002291,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1005141,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-1019413,,Y,,,Y,Y,,,Y,,,,,,,Y,,,,,,,,Y,,,,,,
+1019587,,Y,,,Y,Y,,,Y,Y,Y,,Y,,,,,,,,,,,Y,,,,,,
 1000774,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,,Y,,Y,Y,,Y,Y,Y,Y,,,Y,,,,,,
 1002495,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1008452,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -3015,6 +3015,13 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1005298,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
 1009958,,Y,Y,,Y,Y,,Y,Y,Y,Y,,Y,,,,Y,Y,Y,,Y,Y,,Y,,,,Y,,
 1000636,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1019602,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
+1019603,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
+1019604,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
+1019605,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
+1019606,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
+1019607,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
+1019608,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
 1011886,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,,Y
 1005430,,Y,,Y,,,,,Y,,Y,,,,,,,,,,,,,,,,,,,
 1004178,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -3055,8 +3062,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1008418,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,,Y,,Y,Y,,Y,Y,Y,,,,Y,Y,,,,,
 1010085,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,,Y,,,Y,Y,Y,Y,Y,,Y,Y,Y,,,,,Y,Y
 1009386,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-1000692,,Y,Y,,,Y,,Y,Y,Y,Y,,,,,Y,Y,Y,,,Y,,,Y,,,,,,
-1010956,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,Y,Y,Y,Y,,Y,Y,,Y,,,Y,,,
+1019588,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,Y,Y,Y,Y,,Y,Y,,Y,,Y,,Y,,Y
 1003511,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,,Y,Y,,Y,,Y,Y,,Y,,,Y,Y,,
 1004662,,Y,Y,,Y,Y,,Y,Y,Y,Y,Y,,,,Y,Y,Y,,,,Y,,Y,Y,,Y,Y,,
 1006699,,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,,,Y,Y,Y,Y,,,,,Y,,,,,,
@@ -3758,6 +3764,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1004391,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1012602,,Y,,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,,Y
 1012218,,Y,,Y,,Y,,Y,Y,Y,Y,,Y,,Y,Y,Y,Y,Y,,,Y,,Y,,,,Y,,
+1019586,Y,Y,Y,Y,Y,Y,,,Y,Y,Y,,Y,,,Y,Y,Y,Y,,,,,Y,,,,Y,,
 1018697,,Y,Y,Y,,Y,,Y,Y,,Y,,Y,,,,Y,,Y,,,,,,,,,,,
 1003663,,Y,Y,,Y,Y,Y,Y,Y,Y,Y,,Y,Y,,Y,Y,Y,Y,,,,,,,,,,,
 1011325,,Y,Y,,,Y,,Y,Y,Y,Y,,Y,,,,Y,,Y,,,Y,,Y,,,Y,,,Y
@@ -5729,7 +5736,6 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1005598,,Y,Y,Y,Y,Y,,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,,,,Y,,Y,Y,,,Y,,
 1005826,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1001510,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-1009688,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y
 1008468,,Y,Y,Y,Y,Y,Y,,Y,Y,Y,,Y,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,Y,,,Y
 1005444,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1016866,,Y,,,Y,Y,,Y,Y,Y,,Y,,,,Y,,Y,Y,,,Y,,Y,Y,,,,,
@@ -5909,6 +5915,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1003521,Y,Y,,Y,Y,,,Y,Y,,,,,,,,,,,,,,,,,,,,,
 1008284,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,,,,,,,Y,,,,,Y,,,,,,
 1018684,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,,Y,Y,Y,Y,,,Y,,Y,,,,Y,,
+1019590,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,,,,Y,Y,,Y,Y,,,Y,,Y,,Y,Y,,,
 1005974,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1011154,,Y,,,Y,Y,,Y,Y,Y,Y,Y,,,,Y,Y,Y,,,,,,Y,,,Y,,,
 1019059,,Y,,Y,,Y,,Y,Y,Y,Y,,Y,,Y,Y,Y,Y,Y,Y,Y,Y,,Y,,,,,,
@@ -6096,7 +6103,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1019321,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,,Y,Y,Y,,,Y,,Y,,Y,Y,,,Y
 1019322,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,,Y,Y,,Y,,Y,Y,,,Y
 1002986,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-1012788,,Y,,Y,Y,Y,,Y,Y,Y,,,,,,,,,Y,,,Y,,Y,,,,,,
+1019598,Y,Y,,Y,Y,Y,,,Y,Y,Y,Y,,,,,,,,,,Y,,Y,,,,,,
 1000399,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1003065,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,,,
 1004602,Y,Y,Y,,Y,Y,,Y,Y,Y,Y,Y,Y,,,Y,Y,,Y,Y,,,,Y,,,,,,
@@ -6340,8 +6347,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1018454,,Y,,,,Y,,,Y,Y,Y,,,,,,,,,,,,,Y,,,,,,
 1003609,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,,Y,,Y,Y,Y,Y,Y,Y,Y,Y,,Y,Y,,Y,,,Y
 1003610,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,,Y,,Y,Y,Y,Y,Y,Y,,,,Y,Y,,Y,,,Y
-1009710,,,,,,,,Y,Y,Y,Y,,,,,Y,,,,,,,,Y,,,,,,
-1018457,,,,,,,,,Y,,,,,,,,,,,,,,,Y,,,,,,
+1019601,,,,,,,,,Y,Y,,,,,,Y,,,,,,,,Y,,,,,,
 1009297,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1001922,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,,,Y,,,,,,
 1002007,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -6851,6 +6857,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1018773,,Y,,Y,Y,Y,,Y,Y,Y,Y,,Y,,,Y,Y,Y,Y,,,Y,Y,Y,Y,Y,Y,Y,,Y
 1005861,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1003489,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,,Y,,,Y,,Y,Y,Y,Y,,,Y,,,,,,
+1019610,,,,,Y,Y,,Y,Y,Y,Y,,Y,,,,Y,,,,,,,Y,,,Y,,,
 1002078,,,,Y,,Y,,,Y,Y,,,Y,,,,Y,,,,,,,,,,,,,
 1003518,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1000331,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -7058,6 +7065,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1018138,,Y,,Y,,,,Y,Y,Y,Y,Y,,,Y,,,Y,Y,,,,Y,Y,Y,Y,,,,Y
 1009214,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1018384,Y,Y,Y,Y,,Y,,,Y,Y,Y,,,,Y,,,,Y,,,,,Y,,,,,,
+1019599,,Y,,,,Y,,Y,Y,Y,Y,,Y,,,,Y,Y,Y,,,Y,,Y,,Y,,,,
 1003707,Y,Y,,,,Y,,Y,Y,Y,Y,,,,Y,Y,,Y,,Y,,,,Y,,Y,Y,,,
 1005474,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1009897,,Y,,Y,Y,Y,,,Y,Y,Y,Y,,,,,Y,Y,Y,,,Y,,Y,,,,,,
@@ -7523,6 +7531,7 @@ FMID,Organic,Bakedgoods,Cheese,Crafts,Flowers,Eggs,Seafood,Herbs,Vegetables,Hone
 1016876,Y,Y,Y,,Y,Y,Y,,Y,Y,Y,Y,Y,,,Y,Y,Y,,,,Y,,Y,,Y,,,,
 1005799,,Y,Y,Y,,,Y,,Y,Y,Y,Y,Y,,,Y,Y,Y,Y,,Y,,,Y,,,,,,
 1002602,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,,Y,Y,Y,,Y,Y,,,,Y,,,,,Y,
+1019596,,,,Y,,,,Y,Y,,,,,,,,,Y,Y,,,,,Y,,Y,,,,
 1000480,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1018285,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,,,,,Y,,Y,Y,,,Y,,Y,,,,Y,,
 1010850,,Y,,Y,,Y,,,Y,Y,Y,,,,,Y,,Y,Y,,,,,Y,,,,,,
