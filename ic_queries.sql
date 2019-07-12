@@ -1,9 +1,9 @@
-Missing Farmers Market Name
+Missing Farmers Market Name in the farmers_market_base_table
 select fmid from farmers_market_base_table where MarketName is null;
 
 no rows found.
 
-duplicate farmer's markets
+duplicate farmer's markets in the farmers_market_base_table
 select substr(MarketName, 1,20), street, zip, count(substr(MarketName, 1,20)) as NumOccurrences from farmers_market_base_table 
 group by street, substr(MarketName, 1,20) having (count(street) > 1 and count(zip) > 1 and count(substr(MarketName,1,20)) > 1);
 
@@ -29,7 +29,8 @@ Welcome Center Farmers Market|2931 Monroe Avenue|51555|2
 Paulding County Farm Bureau Fa|4075 Charles Hardy Pkway,|30157|2
 Dresden Farmers Market|421 Linden St.|38225|2
 
-Invalid US Longitude and Lattitude
+Invalid US Longitude and Lattitude in the farmers_market_base_table -- These rows can't be used for our USA geo-location use cases.
+
 select fmid, MarketName, x, y from farmers_market_base_table where x > 0 or y < 0 or x > abs(180) or y > abs(90) or x is null or y is null;
 
 2000001|Center For Design Practice - Mobile Farmers Market||
@@ -60,4 +61,16 @@ select fmid, MarketName, x, y from farmers_market_base_table where x > 0 or y < 
 2000034|Urban Oasis Farmers Market On The Move||
 2000035|Westside Tailgate Farmers Market||
 2000036|Ymca Farmers Market And Veggie Van||
+
+
+
+Rows with null values in all social media type columns in the FarmerMarket_socialMedia.  
+
+no rows found.
+
+Invalid websites in the FarmerMarket_socialMedia table. Valid web sites must have at least one character between "http(s)://" and the "." and at least two characters after the dot. 
+
+select fmid, website  from  where website not  like 'http%://_%.__%';
+
+no rows found
 
