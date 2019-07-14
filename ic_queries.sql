@@ -186,7 +186,29 @@ select count( *)  from FarmersMarket_schedule  where season is null and (seasonO
 
 3205 records with no incomplete schedile inforation
 
+15.  Product records where their foreign keys are not found in the Market tables
+
+select * from FarmersMarket_products prd where prd.fmid not in (select mkt.fmid from farmers_market_base_table mkt);
+
+No rows found.
+
+16. Product records where there are at least two rows having the same ID, but differing attributes.
+
+select *
+  from FarmersMarket_products prd1
+  join ( select *
+           from FarmersMarket_products 
+          group by fmid
+         having count(*) > 1 ) prd2
+    on prd1.fmid = prd2.fmid;
+
+No rows found
 
 
+17.  Rows with no product information
 
+select * from FarmersMarket_products where Organic is null and Bakedgoods is null and Cheese is null and Crafts is null and Flowers and Eggs is null and Seafood is null and Herbs is null and Vegetables is null and Honey is null
+    and Jams is null and Maple is null and Meat is null and Nursery is null and Nuts is null and Plants is null and Poultry is null and Prepared is null and Soap is null and Trees and
+    Wine is null and Coffee is null and Beans is null and Fruits is null and Grains is null and Juices is null and Mushrooms is null and Tofu is null and WildHarvested is null;
 
+No rows found
