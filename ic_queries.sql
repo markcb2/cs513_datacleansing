@@ -135,7 +135,7 @@ No rows found
 
 11. Rows with invalid payment type indicator values (valid values are 'Y' or null) in the Payment Type table;
 
-select fmid, wic, wiccash, SFMNP, SNAP from paymentType where wic not in ('Y', null) or wiccash not in ('Y', null) or SFMNP not in ('Y', null) or SNAP not in ('Y', null
+select fmid, Credit, wic, wiccash, SFMNP, SNAP from paymentType where Credit not in ('Y', null) or wic not in ('Y', null) or wiccash not in ('Y', null) or SFMNP not in ('Y', null) or SNAP not in ('Y', null);
 
 No rows found
 
@@ -212,3 +212,171 @@ select * from FarmersMarket_products where Organic is null and Bakedgoods is nul
     Wine is null and Coffee is null and Beans is null and Fruits is null and Grains is null and Juices is null and Mushrooms is null and Tofu is null and WildHarvested is null;
 
 No rows found
+
+
+
+------------------
+
+Additional data cleansing to eliminate Integrity Constraints shown above
+
+
+create table deduplicated_farmers_market_base_table as
+select fmid, MarketName, street, city, County, State, zip, x, y from farmers_market_base_table where fmid not in (
+select fmid from farmers_market_base_table 
+group by street, substr(MarketName, 1,20) having (count(street) > 1 and count(zip) > 1 and count(substr(MarketName,1,20)) > 1));
+
+create table cleansed_farmers_market_base_table as 
+select fmid, MarketName, street, city, County, State, zip, x, y from deduplicated_farmers_market_base_table where fmid not in 
+(
+  select fmid from farmers_market_base_table  where x is null or y is null
+);
+
+create table cleansed_FarmerMarket_socialMedia as 
+  select fmid, website, Facebook, Twitter, Youtube, OtherMedia from FarmerMarket_socialMedia where fmid in (
+    select fmid from cleansed_farmers_market_base_table
+);
+
+create table cleansed_paymentType as
+  select fmid, Credit, wic, wiccash, SFMNP, SNAP from paymentType where fmid in (
+    select fmid from cleansed_farmers_market_base_table
+);
+
+create table cleansed_FarmersMarket_products as 
+  select * from FarmersMarket_products where fmid in (
+    select fmid from cleansed_farmers_market_base_table
+);
+
+create table temp_cleansed_FarmersMarket_schedule as
+    select fmid, season, seasonOpenning, seasonClosing, seasonTime from FarmersMarket_schedule where fmid not in (
+      select fmid  from FarmersMarket_schedule  where season is null and (seasonOpenning is null or seasonClosing is null) or seasonTime is null
+);
+
+create table cleansed_FarmersMarket_schedule as
+  select * from temp_cleansed_FarmersMarket_schedule where fmid in (
+    select fmid from cleansed_farmers_market_base_table
+);
+
+DROP TABLE IF EXISTS markets;
+CREATE TABLE markets (
+FMID VARCHAR(10) NOT NULL,
+MarketName VARCHAR(100) NOT NULL,
+street VARCHAR(100) NULL,
+city VARCHAR(50) NULL,
+County VARCHAR(50) NULL,
+State VARCHAR(50) NULL,
+zip VARCHAR(10) NULL,
+x NUMERIC(12) NULL,
+y NUMERIC(12) NULL
+);
+
+DROP TABLE IF EXISTS paymentTypes;
+CREATE TABLE paymentTypes (
+FMID VARCHAR(10) NOT NULL,
+Credit VARCHAR(1) NULL,
+WIC VARCHAR(1) NULL,
+WICcash VARCHAR(1) NULL,
+SFMNP VARCHAR(1) NULL,
+SNAP VARCHAR(1) NULL
+);
+
+DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+FMID VARCHAR(10) NOT NULL,
+Organic VARCHAR(1) NULL,
+Bakedgoods VARCHAR(1) NULL,
+Cheese VARCHAR(1) NULL,
+Crafts VARCHAR(1) NULL,
+Flowers VARCHAR(1) NULL,
+Eggs VARCHAR(1) NULL,
+Seafood VARCHAR(1) NULL,
+Herbs VARCHAR(1) NULL,
+Vegetables VARCHAR(1) NULL,
+Honey VARCHAR(1) NULL,
+Jams VARCHAR(1) NULL,
+Maple VARCHAR(1) NULL,
+Meat VARCHAR(1) NULL,
+Nursery VARCHAR(1) NULL,
+Nuts VARCHAR(1) NULL,
+Plants VARCHAR(1) NULL,
+Poultry VARCHAR(1) NULL,
+Prepared VARCHAR(1) NULL,
+Soap VARCHAR(1) NULL,
+Trees VARCHAR(1) NULL,
+Wine VARCHAR(1) NULL,
+Coffee VARCHAR(1) NULL,
+Beans VARCHAR(1) NULL,
+Fruits VARCHAR(1) NULL,
+Grains VARCHAR(1) NULL,
+Juices VARCHAR(1) NULL,
+Mushrooms VARCHAR(1) NULL,
+PetFood VARCHAR(1) NULL,
+Tofu VARCHAR(1) NULL,
+WildHarvested VARCHAR(1) NULL
+);
+
+DROP TABLE IF EXISTS socialMedia;
+CREATE TABLE socialMedia (
+FMID VARCHAR(10) NOT NULL,
+Website VARCHAR(256) NULL,
+Facebook VARCHAR(256) NULL,
+Twitter VARCHAR(256) NULL,
+Youtube VARCHAR(256) NULL,
+OtherMedia VARCHAR(256) NULL
+);
+
+DROP TABLE IF EXISTS schedule;
+CREATE TABLE schedule (
+FMID VARCHAR(10) NOT NULL,
+season VARCHAR(50) NULL,
+seasonOpenning VARCHAR(50) NULL,
+seasonClosing VARCHAR(50) NULL,
+seasonTime VARCHAR(100) NULL
+);
+
+insert into markets select * from cleansed_farmers_market_base_table;
+
+insert into paymentTypes select * from cleansed_paymentType;
+
+insert into products select * from cleansed_FarmersMarket_products;
+
+insert into socialMedia select * from cleansed_FarmerMarket_socialMedia;
+
+insert into schedule select * from cleansed_FarmersMarket_schedule;
+
+drop table deduplicated_farmers_market_base_table;
+
+drop table cleansed_farmers_market_base_table;
+
+drop table cleansed_FarmerMarket_socialMedia;
+
+drop table cleansed_paymentType;
+
+drop table cleansed_FarmersMarket_products;
+
+drop table temp_cleansed_FarmersMarket_schedule;
+
+drop table cleansed_FarmersMarket_schedule;
+
+.headers on
+.mode csv
+.output markets.csv
+select * from markets;
+.quit
+
+.headers on
+.mode csv
+.output paymentTypes.csv
+select * from paymentTypes;
+.quit
+
+.headers on
+.mode csv
+.output products.csv
+select * from products;
+.quit
+
+.headers on
+.mode csv
+.output socialMedia.csv
+select * from socialMedia;
+.quit
