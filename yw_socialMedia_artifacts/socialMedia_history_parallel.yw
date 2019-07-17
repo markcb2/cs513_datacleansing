@@ -1,0 +1,21 @@
+#@begin Parallel_OR #@desc Parallel OpenRefine Workflow
+#@param mode:row-based
+#@in MarketName
+#@in Website
+#@out CleanData
+#@begin core/row-removal0 #@desc Remove rows
+#@param mode:row-based
+#@in Website
+#@out Website_1
+#@end core/row-removal0
+#@begin core/column-removal1 #@desc Remove column MarketName
+#@in MarketName
+#@out remove-MarketName
+#@end core/column-removal1
+#@begin CombineDataCleaningChanges
+#@in Website_1
+#@in MarketName
+#@in remove-MarketName
+#@out CleanData
+#@end CombineDataCleaningChanges
+#@end Parallel_OR
