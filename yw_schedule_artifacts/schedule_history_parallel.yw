@@ -1,0 +1,352 @@
+#@begin Parallel_OR #@desc Parallel OpenRefine Workflow
+#@param expression:value.replace(/\bto\b/,"-")
+#@param newColumnName:seasonClosing
+#@param expression:value
+#@param expression:grel:cells.Season3Date.value
+#@param index:1
+#@param expression:value.toDate()
+#@param index:2
+#@param removeOriginalColumn:False
+#@param index:0
+#@param oldColumnName:season_1
+#@param expression:grel:cells['Season1Time'].value
+#@param expression:grel:cells.Season1Date.value
+#@param separator:-
+#@param newColumnName:seasonOpenning
+#@param expression:grel:cells['Season2Time'].value
+#@param expression:grel:cells.Season2Date.value
+#@param expression:grel:value.replace('01','January').replace('02','February').replace('03','March').replace('04','April').replace('05','May').replace('06','June').replace('07','July').replace('08','August').replace('09','September').replace('10','October').replace('11','November').replace('12','December')
+#@param expression:value.toString()
+#@param expression:value.replace(/([a-zA-Z]+)\s+\d+/,"$1")
+#@param oldColumnName:season_2
+#@param expression:value.replace(/(?:(((Jan(uary)?|Ma(r(ch)?|y)|Jul(y)?|Aug(ust)?|Oct(ober)?|Dec(ember)?)\_31)|((Jan(uary)?|Ma(r(ch)?|y)|Apr(il)?|Ju((ly?)|(ne?))|Aug(ust)?|Oct(ober)?|(Sept|Nov|Dec)(ember)?)\_(0?[1-9]|([12]\d)|30))|(Feb(ruary)?\_(0?[1-9]|1\d|2[0-8]|(29(?=,\_((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))))\,\s+((1[6-9]|[2-9]\d)\d{2}))/,"$1")
+#@param index:16
+#@param expression:value.replace(/(0[1-9]|1[012])[-_.\/](0[1-9]|[12][0-9]|3[01])[-.\/](19|20)\d\d/,"$1")
+#@param expression:grel:cells['Season3Time'].value
+#@param expression:value.toNumber()
+#@in season_2_9
+#@in season_14
+#@in season_8
+#@in SFMNP
+#@in season_3
+#@in season_2_2
+#@in season_2_4
+#@in Season1Time
+#@in season
+#@in season_2_8
+#@in season_1_3
+#@in season_2
+#@in season_9
+#@in Season4Time
+#@in season_1_2
+#@in season_2_5
+#@in season_13
+#@in season_12
+#@in seasonTime_2
+#@in season_5
+#@in OtherMedia
+#@in season_11
+#@in season_1_1
+#@in season_6
+#@in season_2_7
+#@in season_2_6
+#@in Season3Time
+#@in season_10
+#@in season_2_3
+#@in seasonTime_1
+#@in Season2Time
+#@in season_1_5
+#@in season_2_1
+#@in Location_2
+#@in Location
+#@in Location_1
+#@in season_1_4
+#@in seasonOpenning
+#@in Season4Date
+#@in season_7
+#@in season_4
+#@in season_15
+#@in Season3Date
+#@in MarketName
+#@in season_1
+#@in x
+#@in y
+#@in seasonTime
+#@out CleanData
+#@begin core/column-removal0 #@desc Remove column SFMNP
+#@in SFMNP
+#@out remove-SFMNP
+#@end core/column-removal0
+#@begin core/text-transform1 #@desc Text transform on cells in column Season4Date using expression value.toString()
+#@param expression:value.toString()
+#@in Season4Date
+#@out Season4Date_1
+#@end core/text-transform1
+#@begin core/text-transform2 #@desc Text transform on cells in column Season3Date using expression value.toString()
+#@param expression:value.toString()
+#@in Season3Date
+#@out Season3Date_1
+#@end core/text-transform2
+#@begin core/text-transform3 #@desc Text transform on cells in column season using expression grel:cells.Season3Date.value
+#@param expression:grel:cells.Season3Date.value
+#@in season
+#@out season_1
+#@end core/text-transform3
+#@begin core/text-transform4 #@desc Text transform on cells in column season using expression grel:cells.Season2Date.value
+#@param expression:grel:cells.Season2Date.value
+#@in season_1
+#@out season_2
+#@end core/text-transform4
+#@begin core/text-transform5 #@desc Text transform on cells in column season using expression grel:cells.Season1Date.value
+#@param expression:grel:cells.Season1Date.value
+#@in season_2
+#@out season_3
+#@end core/text-transform5
+#@begin core/mass-edit6 #@desc Mass edit cells in column season
+#@param expression:value
+#@in season_3
+#@out season_4
+#@end core/mass-edit6
+#@begin core/text-transform7 #@desc Text transform on cells in column season using expression value.replace(/(?:(((Jan(uary)?|Ma(r(ch)?|y)|Jul(y)?|Aug(ust)?|Oct(ober)?|Dec(ember)?)\ 31)|((Jan(uary)?|Ma(r(ch)?|y)|Apr(il)?|Ju((ly?)|(ne?))|Aug(ust)?|Oct(ober)?|(Sept|Nov|Dec)(ember)?)\ (0?[1-9]|([12]\d)|30))|(Feb(ruary)?\ (0?[1-9]|1\d|2[0-8]|(29(?=,\ ((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))))\,\s+((1[6-9]|[2-9]\d)\d{2}))/,\"$1\")
+#@param expression:value.replace(/(?:(((Jan(uary)?|Ma(r(ch)?|y)|Jul(y)?|Aug(ust)?|Oct(ober)?|Dec(ember)?)\_31)|((Jan(uary)?|Ma(r(ch)?|y)|Apr(il)?|Ju((ly?)|(ne?))|Aug(ust)?|Oct(ober)?|(Sept|Nov|Dec)(ember)?)\_(0?[1-9]|([12]\d)|30))|(Feb(ruary)?\_(0?[1-9]|1\d|2[0-8]|(29(?=,\_((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))))\,\s+((1[6-9]|[2-9]\d)\d{2}))/,"$1")
+#@in season_4
+#@out season_5
+#@end core/text-transform7
+#@begin core/text-transform8 #@desc Text transform on cells in column season using expression value.replace(/\bto\b/,\"-\")
+#@param expression:value.replace(/\bto\b/,"-")
+#@in season_5
+#@out season_6
+#@end core/text-transform8
+#@begin core/text-transform9 #@desc Text transform on cells in column season using expression value.replace(/([a-zA-Z]+)\s+\d+/,\"$1\")
+#@param expression:value.replace(/([a-zA-Z]+)\s+\d+/,"$1")
+#@in season_6
+#@out season_7
+#@end core/text-transform9
+#@begin core/text-transform10 #@desc Text transform on cells in column season using expression value.replace(/(0[1-9]|1[012])[- .\/](0[1-9]|[12][0-9]|3[01])[-.\/](19|20)\d\d/,\"$1\")
+#@param expression:value.replace(/(0[1-9]|1[012])[-_.\/](0[1-9]|[12][0-9]|3[01])[-.\/](19|20)\d\d/,"$1")
+#@in season_7
+#@out season_8
+#@end core/text-transform10
+#@begin core/text-transform11 #@desc Text transform on cells in column season using expression grel:value.replace('01','January').replace('02','February').replace('03','March').replace('04','April').replace('05','May').replace('06','June').replace('07','July').replace('08','August').replace('09','September').replace('10','October').replace('11','November').replace('12','December')
+#@param expression:grel:value.replace('01','January').replace('02','February').replace('03','March').replace('04','April').replace('05','May').replace('06','June').replace('07','July').replace('08','August').replace('09','September').replace('10','October').replace('11','November').replace('12','December')
+#@in season_8
+#@out season_9
+#@end core/text-transform11
+#@begin core/mass-edit12 #@desc Mass edit cells in column season
+#@param expression:value
+#@in season_9
+#@out season_10
+#@end core/mass-edit12
+#@begin core/mass-edit13 #@desc Mass edit cells in column season
+#@param expression:value
+#@in season_10
+#@out season_11
+#@end core/mass-edit13
+#@begin core/mass-edit14 #@desc Mass edit cells in column season
+#@param expression:value
+#@in season_11
+#@out season_12
+#@end core/mass-edit14
+#@begin core/mass-edit15 #@desc Mass edit cells in column season
+#@param expression:value
+#@in season_12
+#@out season_13
+#@end core/mass-edit15
+#@begin core/text-transform16 #@desc Text transform on cells in column Season4Time using expression value.toString()
+#@param expression:value.toString()
+#@in Season4Time
+#@out Season4Time_1
+#@end core/text-transform16
+#@begin core/text-transform17 #@desc Text transform on cells in column Season3Time using expression value.toString()
+#@param expression:value.toString()
+#@in Season3Time
+#@out Season3Time_1
+#@end core/text-transform17
+#@begin core/text-transform18 #@desc Text transform on cells in column Season2Time using expression value.toString()
+#@param expression:value.toString()
+#@in Season2Time
+#@out Season2Time_1
+#@end core/text-transform18
+#@begin core/text-transform19 #@desc Text transform on cells in column Season1Time using expression value.toString()
+#@param expression:value.toString()
+#@in Season1Time
+#@out Season1Time_1
+#@end core/text-transform19
+#@begin core/text-transform20 #@desc Text transform on cells in column seasonTime using expression grel:cells['Season3Time'].value
+#@param expression:grel:cells['Season3Time'].value
+#@in seasonTime
+#@out seasonTime_1
+#@end core/text-transform20
+#@begin core/text-transform21 #@desc Text transform on cells in column seasonTime using expression grel:cells['Season2Time'].value
+#@param expression:grel:cells['Season2Time'].value
+#@in seasonTime_1
+#@out seasonTime_2
+#@end core/text-transform21
+#@begin core/text-transform22 #@desc Text transform on cells in column seasonTime using expression grel:cells['Season1Time'].value
+#@param expression:grel:cells['Season1Time'].value
+#@in seasonTime_2
+#@out seasonTime_3
+#@end core/text-transform22
+#@begin core/column-move23 #@desc Move column season to position 16
+#@param index:16
+#@in season_13
+#@out season_14
+#@end core/column-move23
+#@begin core/text-transform24 #@desc Text transform on cells in column x using expression value.toNumber()
+#@param expression:value.toNumber()
+#@in x
+#@out x_1
+#@end core/text-transform24
+#@begin core/text-transform25 #@desc Text transform on cells in column y using expression value.toNumber()
+#@param expression:value.toNumber()
+#@in y
+#@out y_1
+#@end core/text-transform25
+#@begin core/text-transform26 #@desc Text transform on cells in column season using expression value.toString()
+#@param expression:value.toString()
+#@in season_14
+#@out season_15
+#@end core/text-transform26
+#@begin core/column-split27 #@desc Split column season by separator
+#@param removeOriginalColumn:False
+#@param separator:-
+#@in season_15
+#@out season_16
+#@out season_1_1
+#@out season_2_1
+#@end core/column-split27
+#@begin core/mass-edit28 #@desc Mass edit cells in column season 1
+#@param expression:value
+#@in season_1_1
+#@out season_1_1
+#@end core/mass-edit28
+#@begin core/mass-edit29 #@desc Mass edit cells in column season 1
+#@param expression:value
+#@in season_1_1
+#@out season_1_2
+#@end core/mass-edit29
+#@begin core/mass-edit30 #@desc Mass edit cells in column season 1
+#@param expression:value
+#@in season_1_2
+#@out season_1_3
+#@end core/mass-edit30
+#@begin core/mass-edit31 #@desc Mass edit cells in column season 1
+#@param expression:value
+#@in season_1_3
+#@out season_1_4
+#@end core/mass-edit31
+#@begin core/mass-edit32 #@desc Mass edit cells in column season 1
+#@param expression:value
+#@in season_1_4
+#@out season_1_5
+#@end core/mass-edit32
+#@begin core/mass-edit33 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_1
+#@out season_2_1
+#@end core/mass-edit33
+#@begin core/mass-edit34 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_1
+#@out season_2_2
+#@end core/mass-edit34
+#@begin core/mass-edit35 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_2
+#@out season_2_3
+#@end core/mass-edit35
+#@begin core/mass-edit36 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_3
+#@out season_2_4
+#@end core/mass-edit36
+#@begin core/mass-edit37 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_4
+#@out season_2_5
+#@end core/mass-edit37
+#@begin core/mass-edit38 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_5
+#@out season_2_6
+#@end core/mass-edit38
+#@begin core/mass-edit39 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_6
+#@out season_2_7
+#@end core/mass-edit39
+#@begin core/mass-edit40 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_7
+#@out season_2_8
+#@end core/mass-edit40
+#@begin core/mass-edit41 #@desc Mass edit cells in column season 2
+#@param expression:value
+#@in season_2_8
+#@out season_2_9
+#@end core/mass-edit41
+#@begin core/column-rename42 #@desc Rename column season 1 to seasonOpenning
+#@param oldColumnName:season_1
+#@param newColumnName:seasonOpenning
+#@in season_1_5
+#@out seasonOpenning
+#@end core/column-rename42
+#@begin core/column-rename43 #@desc Rename column season 2 to seasonClosing
+#@param oldColumnName:season_2
+#@param newColumnName:seasonClosing
+#@in season_2_9
+#@out seasonClosing
+#@end core/column-rename43
+#@begin core/text-transform44 #@desc Text transform on cells in column seasonOpenning using expression value.toDate()
+#@param expression:value.toDate()
+#@in seasonOpenning
+#@out seasonOpenning_1
+#@end core/text-transform44
+#@begin core/column-removal45 #@desc Remove column OtherMedia
+#@in OtherMedia
+#@out remove-OtherMedia
+#@end core/column-removal45
+#@begin core/column-move46 #@desc Move column Location to position 0
+#@param index:0
+#@in Location
+#@out Location_1
+#@end core/column-move46
+#@begin core/column-move47 #@desc Move column Location to position 1
+#@param index:1
+#@in Location_1
+#@out Location_2
+#@end core/column-move47
+#@begin core/column-move48 #@desc Move column Location to position 2
+#@param index:2
+#@in Location_2
+#@out Location_3
+#@end core/column-move48
+#@begin core/column-removal49 #@desc Remove column MarketName
+#@in MarketName
+#@out remove-MarketName
+#@end core/column-removal49
+#@begin CombineDataCleaningChanges
+#@in SFMNP
+#@in remove-SFMNP
+#@in Season4Date_1
+#@in Season3Date_1
+#@in season_16
+#@in Season4Time_1
+#@in Season3Time_1
+#@in Season2Time_1
+#@in Season1Time_1
+#@in seasonTime_3
+#@in x_1
+#@in y_1
+#@in season_1_5
+#@in season_2_9
+#@in seasonOpenning_1
+#@in seasonClosing
+#@in OtherMedia
+#@in remove-OtherMedia
+#@in Location_3
+#@in MarketName
+#@in remove-MarketName
+#@out CleanData
+#@end CombineDataCleaningChanges
+#@end Parallel_OR
