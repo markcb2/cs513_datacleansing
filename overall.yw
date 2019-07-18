@@ -1,0 +1,43 @@
+#@begin Overall_process #@desc OpenRefine Workflow of overall process to clean farmers market data
+#@param farmers_market_raw_data_set:from_Website
+#@begin open_refine #@desc Data cleaning operation
+#@param farmers_market_raw_data_set:from_Website
+#@out farmers_market_data
+#@out schedule_data
+#@out payment_type_data
+#@out social_media_data
+#@out products_data
+#@end open_refine
+#@begin sql_schema_operation #@desc Load data to SQLlite and generate data models
+#@in farmers_market_data
+#@in schedule_data
+#@in payment_type_data
+#@in social_media_data
+#@in products_data
+#@out farmers_market_data_model
+#@out schedule_data_model
+#@out payment_type_data_model
+#@out social_media_data_model
+#@out products_data_model
+#@end sql_schema_operation
+#@begin generate_integrity_constraint_operation #@desc generate IC and clean the data further
+#@in farmers_market_data_model
+#@in schedule_data_model
+#@in payment_type_data_model
+#@in social_media_data_model
+#@in products_data_model
+#@out farmers_market_clean_data
+#@out schedule_clean_data
+#@out payment_type_clean_data
+#@out social_media_clean_data
+#@out products_clean_data
+#@end generate_integrity_constraint_operation
+#@begin generate_tableau_dashboard #@desc generate tableau dashboard with clean data
+#@in farmers_market_clean_data
+#@in schedule_clean_data
+#@in payment_type_clean_data
+#@in social_media_clean_data
+#@in products_clean_data
+#@out tableau_dashboard
+#@end generate_tableau_dashboard
+#@end Overall_process
