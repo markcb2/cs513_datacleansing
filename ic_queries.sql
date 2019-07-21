@@ -1,7 +1,7 @@
 IC violations
 
 
- 1. Market records where there are at least two rows having the same ID, but some differing attributes.
+ IC1. Market records where there are at least two rows having the same ID, but some differing attributes.
 
 
 select fm1.fmid, fm1.MarketName, fm1.street, fm1.city, fm1.County, fm1.State, fm1.zip, fm1.x, fm1.y
@@ -15,13 +15,13 @@ select fm1.fmid, fm1.MarketName, fm1.street, fm1.city, fm1.County, fm1.State, fm
 
 No rows found
 
-2. Missing market names in the Market table
+IC2. Missing market names in the Market table
 
 select fmid from farmers_market_base_table where MarketName is null;
 
 No rows found.
 
-3. Duplicate market names in the Market table
+IC3. Duplicate market names in the Market table
 
 select substr(MarketName, 1,20), street, zip, count(substr(MarketName, 1,20)) as NumOccurrences from farmers_market_base_table 
 group by street, substr(MarketName, 1,20) having (count(street) > 1 and count(zip) > 1 and count(substr(MarketName,1,20)) > 1);
@@ -38,6 +38,7 @@ Dresden Farmers Mark|421 Linden St.|38225|2
 Mississippi Farmers |929 High Street|39202|2
 Beaverton Farmers Ma|Hall Blvd.|97075|2
 
+
 select substr(MarketName, 1,30), street, zip, count(substr(MarketName, 1,30)) as NumOccurrences from farmers_market_base_table 
 group by street, substr(MarketName, 1,30) having (count(street) > 1 and count(zip) > 1 and count(substr(MarketName,1,30)) > 1);
 
@@ -48,13 +49,13 @@ Welcome Center Farmers Market|2931 Monroe Avenue|51555|2
 Paulding County Farm Bureau Fa|4075 Charles Hardy Pkway,|30157|2
 Dresden Farmers Market|421 Linden St.|38225|2
 
-4. Invalid US Longitude or Lattitude in Market table.  These rows can't be used for our USA farmers market geo-location use cases.
+IC4. Invalid US Longitude or Lattitude in Market table.  These rows can't be used for our USA farmers market geo-location use cases.
 
 select fmid, MarketName, x, y from farmers_market_base_table where x > 0 or y < 0 or x > abs(180) or y > abs(90) or abs(y) >  abs(x); 
 
 No rows found
 
-5. Missing Longitude or Lattitude in the Market table.  These rows can't be used for our USA farmers market geo-location use cases;
+IC5. Missing Longitude or Lattitude in the Market table.  These rows can't be used for our USA farmers market geo-location use cases;
 
 select fmid, MarketName, x, y from farmers_market_base_table  where x is null or y is null;
 
@@ -88,13 +89,8 @@ select fmid, MarketName, x, y from farmers_market_base_table  where x is null or
 2000036|Ymca Farmers Market And Veggie Van||
 
 
-6.  Social Media records where its foreign key not found in Market table
 
-select * from FarmerMarket_socialMedia sm where sm.fmid not in (select mkt.fmid from farmers_market_base_table mkt);
-
-No rows found
-
-7. Social Media records where there are at least two rows having the same ID, but some differing attributes.
+IC6. Social Media records where there are at least two rows having the same ID, but some differing attributes.
 
 select sm1.fmid, sm1.website, sm1.Facebook, sm1.Twitter, sm1.Youtube, sm1.OtherMedia
   from FarmerMarket_socialMedia sm1
@@ -107,20 +103,14 @@ select sm1.fmid, sm1.website, sm1.Facebook, sm1.Twitter, sm1.Youtube, sm1.OtherM
 No rows found
 
 
-8. Invalid websites in the Social Media table. Valid web sites must have at least one character between "http(s)://" and the "." and at least two characters after the dot. 
+IC7. Invalid websites in the Social Media table. Valid web sites must have at least one character between "http(s)://" and the "." and at least two characters after the dot. 
 
 select fmid, website  from  FarmerMarket_socialMedia where website not  like 'http%://_%.__%';
 
 No rows found
 
-9. Payment Type records where their foreign keys are not found in the Market table
 
-select * from paymentType pmt where pmt.fmid not in (select mkt.fmid from farmers_market_base_table mkt);
-
-No records found
-
-
-10. Payment Type records where there are at least two rows having the same ID, but some differing attributes.
+IC8. Payment Type records where there are at least two rows having the same ID, but some differing attributes.
 
 select pmt1.fmid, pmt1.wic, pmt1.wiccash, pmt1.SFMNP, pmt1.SNAP
   from paymentType pmt1
@@ -133,19 +123,14 @@ select pmt1.fmid, pmt1.wic, pmt1.wiccash, pmt1.SFMNP, pmt1.SNAP
 
 No rows found
 
-11. Rows with invalid payment type indicator values (valid values are 'Y' or null) in the Payment Type table;
+IC9. Rows with invalid payment type indicator values (valid values are 'Y' or null) in the Payment Type table;
 
 select fmid, Credit, wic, wiccash, SFMNP, SNAP from paymentType where Credit not in ('Y', null) or wic not in ('Y', null) or wiccash not in ('Y', null) or SFMNP not in ('Y', null) or SNAP not in ('Y', null);
 
 No rows found
 
-12. Schedule records where their foreign keys are not found in the Market table 
 
-select * from FarmersMarket_schedule sch where sch.fmid not in (select mkt.fmid from farmers_market_base_table mkt);
-
-No records found
-
-13. Schedule records where there are at least two rows having the same ID, but some differing attributes.
+IC10. Schedule records where there are at least two rows having the same ID, but some differing attributes.
 
 select sch1.fmid, sch1.season, sch1.seasonOpenning, sch1.seasonClosing, sch1.seasonTime
   from FarmersMarket_schedule sch1
@@ -157,7 +142,7 @@ select sch1.fmid, sch1.season, sch1.seasonOpenning, sch1.seasonClosing, sch1.sea
 
 No rows found
 
-.14  Rows where there is no or incomplete schedule information
+IC11  Rows where there is no or incomplete schedule information
 
 select *  from FarmersMarket_schedule  where season is null and (seasonOpenning is null or seasonClosing is null) or seasonTime is null limit 20;
 
@@ -186,13 +171,8 @@ select count( *)  from FarmersMarket_schedule  where season is null and (seasonO
 
 3205 records with no incomplete schedile inforation
 
-15.  Product records where their foreign keys are not found in the Market tables
 
-select * from FarmersMarket_products prd where prd.fmid not in (select mkt.fmid from farmers_market_base_table mkt);
-
-No rows found.
-
-16. Product records where there are at least two rows having the same ID, but differing attributes.
+IC12. Product records where there are at least two rows having the same ID, but differing attributes.
 
 select *
   from FarmersMarket_products prd1
@@ -205,7 +185,7 @@ select *
 No rows found
 
 
-17.  Rows with no product information
+IC13.  Rows with no product information
 
 select * from FarmersMarket_products where Organic is null and Bakedgoods is null and Cheese is null and Crafts is null and Flowers and Eggs is null and Seafood is null and Herbs is null and Vegetables is null and Honey is null
     and Jams is null and Maple is null and Meat is null and Nursery is null and Nuts is null and Plants is null and Poultry is null and Prepared is null and Soap is null and Trees and
@@ -231,25 +211,54 @@ select fmid, MarketName, street, city, County, State, zip, x, y from deduplicate
   select fmid from farmers_market_base_table  where x is null or y is null
 );
 
+
+IC14. Social Media records where its foreign key not found in Markets table after the Markets table was purged of integrity constraints.
+
+
+select count(*) from FarmerMarket_socialMedia sm where sm.fmid not in (select mkt.fmid from cleansed_farmers_market_base_table mkt);
+
+37 records found.
+
 create table cleansed_FarmerMarket_socialMedia as 
   select fmid, website, Facebook, Twitter, Youtube, OtherMedia from FarmerMarket_socialMedia where fmid in (
     select fmid from cleansed_farmers_market_base_table
 );
+
+
+IC15. Payment Type records where their foreign keys are not found in the Market table after the Markets table was purged of integrity constraints.
+
+select count(*) from paymentType pmt where pmt.fmid not in (select mkt.fmid from cleansed_farmers_market_base_table mkt);
+
+39 records found.
 
 create table cleansed_paymentType as
   select fmid, Credit, wic, wiccash, SFMNP, SNAP from paymentType where fmid in (
     select fmid from cleansed_farmers_market_base_table
 );
 
+
+IC16.  Product records where their foreign keys are not found in the Market tables after the Markets table was purged of integrity constraints.
+
+select count(*) from FarmersMarket_products prd where prd.fmid not in (select mkt.fmid from cleansed_farmers_market_base_table mkt);
+
+39 records found.
+
 create table cleansed_FarmersMarket_products as 
   select * from FarmersMarket_products where fmid in (
     select fmid from cleansed_farmers_market_base_table
 );
 
+IC17. Schedule records where their foreign keys are not found in the Market table after the Markets table was purged of integrity constraints.
+
+select count(*) from FarmersMarket_schedule sch where sch.fmid not in (select mkt.fmid from cleansed_farmers_market_base_table mkt);
+
+39 records found
+
 create table temp_cleansed_FarmersMarket_schedule as
     select fmid, season, seasonOpenning, seasonClosing, seasonTime from FarmersMarket_schedule where fmid not in (
       select fmid  from FarmersMarket_schedule  where season is null and (seasonOpenning is null or seasonClosing is null) or seasonTime is null
 );
+
 
 create table cleansed_FarmersMarket_schedule as
   select * from temp_cleansed_FarmersMarket_schedule where fmid in (
