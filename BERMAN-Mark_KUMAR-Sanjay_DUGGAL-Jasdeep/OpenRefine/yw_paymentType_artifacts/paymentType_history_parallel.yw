@@ -1,0 +1,519 @@
+#@begin Parallel_OR #@desc Parallel OpenRefine Workflow
+#@param expression:value.toUppercase()
+#@param expression:grel:value.replace('N','')
+#@param expression:value.replace(/\s+/,'_')
+#@param expression:value.trim()
+#@in Location
+#@in Facebook
+#@in WICcash_1
+#@in SFMNP_3
+#@in SFMNP_2
+#@in WIC_2
+#@in SFMNP_4
+#@in WIC_3
+#@in Poultry
+#@in x
+#@in Organic
+#@in Seafood
+#@in Cheese
+#@in zip
+#@in Vegetables
+#@in Beans
+#@in Season2Time
+#@in street
+#@in Eggs
+#@in Fruits
+#@in State
+#@in Crafts
+#@in Season1Time
+#@in FMID_1
+#@in Bakedgoods
+#@in Tofu
+#@in WIC_1
+#@in updateTime
+#@in Wine
+#@in Nuts
+#@in Jams
+#@in Herbs
+#@in Credit_3
+#@in Mushrooms
+#@in SNAP
+#@in city
+#@in County
+#@in Twitter
+#@in SNAP_1
+#@in FMID
+#@in WICcash_3
+#@in MarketName
+#@in SFMNP
+#@in Credit_1
+#@in Season1Date
+#@in Meat
+#@in WIC
+#@in Credit
+#@in Website
+#@in WICcash
+#@in SNAP_2
+#@in Nursery
+#@in Juices
+#@in Season4Time
+#@in Youtube
+#@in Honey
+#@in y
+#@in PetFood
+#@in Season2Date
+#@in Season3Time
+#@in Credit_2
+#@in Plants
+#@in Prepared
+#@in Season3Date
+#@in Maple
+#@in WildHarvested
+#@in Trees
+#@in Season4Date
+#@in Grains
+#@in Soap
+#@in Flowers
+#@in OtherMedia
+#@in Coffee
+#@in SFMNP_1
+#@in WICcash_2
+#@out CleanData
+#@begin core/text-transform0 #@desc Text transform on cells in column FMID using expression value.trim()
+#@param expression:value.trim()
+#@in FMID
+#@out FMID_1
+#@end core/text-transform0
+#@begin core/text-transform1 #@desc Text transform on cells in column FMID using expression value.replace(/\s+/,' ')
+#@param expression:value.replace(/\s+/,'_')
+#@in FMID_1
+#@out FMID_2
+#@end core/text-transform1
+#@begin core/column-removal2 #@desc Remove column MarketName
+#@in MarketName
+#@out remove-MarketName
+#@end core/column-removal2
+#@begin core/column-removal3 #@desc Remove column Website
+#@in Website
+#@out remove-Website
+#@end core/column-removal3
+#@begin core/column-removal4 #@desc Remove column Facebook
+#@in Facebook
+#@out remove-Facebook
+#@end core/column-removal4
+#@begin core/column-removal5 #@desc Remove column Twitter
+#@in Twitter
+#@out remove-Twitter
+#@end core/column-removal5
+#@begin core/column-removal6 #@desc Remove column Youtube
+#@in Youtube
+#@out remove-Youtube
+#@end core/column-removal6
+#@begin core/column-removal7 #@desc Remove column OtherMedia
+#@in OtherMedia
+#@out remove-OtherMedia
+#@end core/column-removal7
+#@begin core/column-removal8 #@desc Remove column street
+#@in street
+#@out remove-street
+#@end core/column-removal8
+#@begin core/column-removal9 #@desc Remove column city
+#@in city
+#@out remove-city
+#@end core/column-removal9
+#@begin core/column-removal10 #@desc Remove column County
+#@in County
+#@out remove-County
+#@end core/column-removal10
+#@begin core/column-removal11 #@desc Remove column State
+#@in State
+#@out remove-State
+#@end core/column-removal11
+#@begin core/column-removal12 #@desc Remove column zip
+#@in zip
+#@out remove-zip
+#@end core/column-removal12
+#@begin core/column-removal13 #@desc Remove column Season1Date
+#@in Season1Date
+#@out remove-Season1Date
+#@end core/column-removal13
+#@begin core/column-removal14 #@desc Remove column Season1Time
+#@in Season1Time
+#@out remove-Season1Time
+#@end core/column-removal14
+#@begin core/column-removal15 #@desc Remove column Season2Date
+#@in Season2Date
+#@out remove-Season2Date
+#@end core/column-removal15
+#@begin core/column-removal16 #@desc Remove column Season2Time
+#@in Season2Time
+#@out remove-Season2Time
+#@end core/column-removal16
+#@begin core/column-removal17 #@desc Remove column Season3Date
+#@in Season3Date
+#@out remove-Season3Date
+#@end core/column-removal17
+#@begin core/column-removal18 #@desc Remove column Season3Time
+#@in Season3Time
+#@out remove-Season3Time
+#@end core/column-removal18
+#@begin core/column-removal19 #@desc Remove column Season4Date
+#@in Season4Date
+#@out remove-Season4Date
+#@end core/column-removal19
+#@begin core/column-removal20 #@desc Remove column Season4Time
+#@in Season4Time
+#@out remove-Season4Time
+#@end core/column-removal20
+#@begin core/column-removal21 #@desc Remove column x
+#@in x
+#@out remove-x
+#@end core/column-removal21
+#@begin core/column-removal22 #@desc Remove column y
+#@in y
+#@out remove-y
+#@end core/column-removal22
+#@begin core/column-removal23 #@desc Remove column Location
+#@in Location
+#@out remove-Location
+#@end core/column-removal23
+#@begin core/text-transform24 #@desc Text transform on cells in column Credit using expression value.trim()
+#@param expression:value.trim()
+#@in Credit
+#@out Credit_1
+#@end core/text-transform24
+#@begin core/text-transform25 #@desc Text transform on cells in column Credit using expression value.replace(/\s+/,' ')
+#@param expression:value.replace(/\s+/,'_')
+#@in Credit_1
+#@out Credit_2
+#@end core/text-transform25
+#@begin core/text-transform26 #@desc Text transform on cells in column Credit using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in Credit_2
+#@out Credit_3
+#@end core/text-transform26
+#@begin core/text-transform27 #@desc Text transform on cells in column Credit using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Credit_3
+#@out Credit_4
+#@end core/text-transform27
+#@begin core/text-transform28 #@desc Text transform on cells in column WIC using expression value.trim()
+#@param expression:value.trim()
+#@in WIC
+#@out WIC_1
+#@end core/text-transform28
+#@begin core/text-transform29 #@desc Text transform on cells in column WIC using expression value.replace(/\s+/,' ')
+#@param expression:value.replace(/\s+/,'_')
+#@in WIC_1
+#@out WIC_2
+#@end core/text-transform29
+#@begin core/text-transform30 #@desc Text transform on cells in column WIC using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in WIC_2
+#@out WIC_3
+#@end core/text-transform30
+#@begin core/text-transform31 #@desc Text transform on cells in column WIC using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in WIC_3
+#@out WIC_4
+#@end core/text-transform31
+#@begin core/text-transform32 #@desc Text transform on cells in column WICcash using expression value.trim()
+#@param expression:value.trim()
+#@in WICcash
+#@out WICcash_1
+#@end core/text-transform32
+#@begin core/text-transform33 #@desc Text transform on cells in column WICcash using expression value.replace(/\s+/,' ')
+#@param expression:value.replace(/\s+/,'_')
+#@in WICcash_1
+#@out WICcash_2
+#@end core/text-transform33
+#@begin core/text-transform34 #@desc Text transform on cells in column WICcash using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in WICcash_2
+#@out WICcash_3
+#@end core/text-transform34
+#@begin core/text-transform35 #@desc Text transform on cells in column WICcash using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in WICcash_3
+#@out WICcash_4
+#@end core/text-transform35
+#@begin core/text-transform36 #@desc Text transform on cells in column SFMNP using expression value.trim()
+#@param expression:value.trim()
+#@in SFMNP
+#@out SFMNP_1
+#@end core/text-transform36
+#@begin core/text-transform37 #@desc Text transform on cells in column SFMNP using expression value.replace(/\s+/,' ')
+#@param expression:value.replace(/\s+/,'_')
+#@in SFMNP_1
+#@out SFMNP_2
+#@end core/text-transform37
+#@begin core/text-transform38 #@desc Text transform on cells in column SFMNP using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in SFMNP_2
+#@out SFMNP_3
+#@end core/text-transform38
+#@begin core/text-transform39 #@desc Text transform on cells in column SFMNP using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in SFMNP_3
+#@out SFMNP_4
+#@end core/text-transform39
+#@begin core/text-transform40 #@desc Text transform on cells in column SNAP using expression value.trim()
+#@param expression:value.trim()
+#@in SNAP
+#@out SNAP_1
+#@end core/text-transform40
+#@begin core/text-transform41 #@desc Text transform on cells in column SFMNP using expression value.replace(/\s+/,' ')
+#@param expression:value.replace(/\s+/,'_')
+#@in SFMNP_4
+#@out SFMNP_5
+#@end core/text-transform41
+#@begin core/text-transform42 #@desc Text transform on cells in column SNAP using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in SNAP_1
+#@out SNAP_2
+#@end core/text-transform42
+#@begin core/text-transform43 #@desc Text transform on cells in column SNAP using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in SNAP_2
+#@out SNAP_3
+#@end core/text-transform43
+#@begin core/column-removal44 #@desc Remove column Organic
+#@in Organic
+#@out remove-Organic
+#@end core/column-removal44
+#@begin core/column-removal45 #@desc Remove column Bakedgoods
+#@in Bakedgoods
+#@out remove-Bakedgoods
+#@end core/column-removal45
+#@begin core/column-removal46 #@desc Remove column Cheese
+#@in Cheese
+#@out remove-Cheese
+#@end core/column-removal46
+#@begin core/column-removal47 #@desc Remove column Crafts
+#@in Crafts
+#@out remove-Crafts
+#@end core/column-removal47
+#@begin core/column-removal48 #@desc Remove column Flowers
+#@in Flowers
+#@out remove-Flowers
+#@end core/column-removal48
+#@begin core/column-removal49 #@desc Remove column Eggs
+#@in Eggs
+#@out remove-Eggs
+#@end core/column-removal49
+#@begin core/column-removal50 #@desc Remove column Seafood
+#@in Seafood
+#@out remove-Seafood
+#@end core/column-removal50
+#@begin core/column-removal51 #@desc Remove column Herbs
+#@in Herbs
+#@out remove-Herbs
+#@end core/column-removal51
+#@begin core/column-removal52 #@desc Remove column Vegetables
+#@in Vegetables
+#@out remove-Vegetables
+#@end core/column-removal52
+#@begin core/column-removal53 #@desc Remove column Honey
+#@in Honey
+#@out remove-Honey
+#@end core/column-removal53
+#@begin core/column-removal54 #@desc Remove column Jams
+#@in Jams
+#@out remove-Jams
+#@end core/column-removal54
+#@begin core/column-removal55 #@desc Remove column Maple
+#@in Maple
+#@out remove-Maple
+#@end core/column-removal55
+#@begin core/column-removal56 #@desc Remove column Meat
+#@in Meat
+#@out remove-Meat
+#@end core/column-removal56
+#@begin core/column-removal57 #@desc Remove column Nursery
+#@in Nursery
+#@out remove-Nursery
+#@end core/column-removal57
+#@begin core/column-removal58 #@desc Remove column Nuts
+#@in Nuts
+#@out remove-Nuts
+#@end core/column-removal58
+#@begin core/column-removal59 #@desc Remove column Plants
+#@in Plants
+#@out remove-Plants
+#@end core/column-removal59
+#@begin core/column-removal60 #@desc Remove column Poultry
+#@in Poultry
+#@out remove-Poultry
+#@end core/column-removal60
+#@begin core/column-removal61 #@desc Remove column Prepared
+#@in Prepared
+#@out remove-Prepared
+#@end core/column-removal61
+#@begin core/column-removal62 #@desc Remove column Soap
+#@in Soap
+#@out remove-Soap
+#@end core/column-removal62
+#@begin core/column-removal63 #@desc Remove column Trees
+#@in Trees
+#@out remove-Trees
+#@end core/column-removal63
+#@begin core/column-removal64 #@desc Remove column Wine
+#@in Wine
+#@out remove-Wine
+#@end core/column-removal64
+#@begin core/column-removal65 #@desc Remove column Coffee
+#@in Coffee
+#@out remove-Coffee
+#@end core/column-removal65
+#@begin core/column-removal66 #@desc Remove column Beans
+#@in Beans
+#@out remove-Beans
+#@end core/column-removal66
+#@begin core/column-removal67 #@desc Remove column Fruits
+#@in Fruits
+#@out remove-Fruits
+#@end core/column-removal67
+#@begin core/column-removal68 #@desc Remove column Grains
+#@in Grains
+#@out remove-Grains
+#@end core/column-removal68
+#@begin core/column-removal69 #@desc Remove column Juices
+#@in Juices
+#@out remove-Juices
+#@end core/column-removal69
+#@begin core/column-removal70 #@desc Remove column Mushrooms
+#@in Mushrooms
+#@out remove-Mushrooms
+#@end core/column-removal70
+#@begin core/column-removal71 #@desc Remove column PetFood
+#@in PetFood
+#@out remove-PetFood
+#@end core/column-removal71
+#@begin core/column-removal72 #@desc Remove column Tofu
+#@in Tofu
+#@out remove-Tofu
+#@end core/column-removal72
+#@begin core/column-removal73 #@desc Remove column WildHarvested
+#@in WildHarvested
+#@out remove-WildHarvested
+#@end core/column-removal73
+#@begin core/column-removal74 #@desc Remove column updateTime
+#@in updateTime
+#@out remove-updateTime
+#@end core/column-removal74
+#@begin CombineDataCleaningChanges
+#@in FMID_2
+#@in MarketName
+#@in remove-MarketName
+#@in Website
+#@in remove-Website
+#@in Facebook
+#@in remove-Facebook
+#@in Twitter
+#@in remove-Twitter
+#@in Youtube
+#@in remove-Youtube
+#@in OtherMedia
+#@in remove-OtherMedia
+#@in street
+#@in remove-street
+#@in city
+#@in remove-city
+#@in County
+#@in remove-County
+#@in State
+#@in remove-State
+#@in zip
+#@in remove-zip
+#@in Season1Date
+#@in remove-Season1Date
+#@in Season1Time
+#@in remove-Season1Time
+#@in Season2Date
+#@in remove-Season2Date
+#@in Season2Time
+#@in remove-Season2Time
+#@in Season3Date
+#@in remove-Season3Date
+#@in Season3Time
+#@in remove-Season3Time
+#@in Season4Date
+#@in remove-Season4Date
+#@in Season4Time
+#@in remove-Season4Time
+#@in x
+#@in remove-x
+#@in y
+#@in remove-y
+#@in Location
+#@in remove-Location
+#@in Credit_4
+#@in WIC_4
+#@in WICcash_4
+#@in SFMNP_5
+#@in SNAP_3
+#@in Organic
+#@in remove-Organic
+#@in Bakedgoods
+#@in remove-Bakedgoods
+#@in Cheese
+#@in remove-Cheese
+#@in Crafts
+#@in remove-Crafts
+#@in Flowers
+#@in remove-Flowers
+#@in Eggs
+#@in remove-Eggs
+#@in Seafood
+#@in remove-Seafood
+#@in Herbs
+#@in remove-Herbs
+#@in Vegetables
+#@in remove-Vegetables
+#@in Honey
+#@in remove-Honey
+#@in Jams
+#@in remove-Jams
+#@in Maple
+#@in remove-Maple
+#@in Meat
+#@in remove-Meat
+#@in Nursery
+#@in remove-Nursery
+#@in Nuts
+#@in remove-Nuts
+#@in Plants
+#@in remove-Plants
+#@in Poultry
+#@in remove-Poultry
+#@in Prepared
+#@in remove-Prepared
+#@in Soap
+#@in remove-Soap
+#@in Trees
+#@in remove-Trees
+#@in Wine
+#@in remove-Wine
+#@in Coffee
+#@in remove-Coffee
+#@in Beans
+#@in remove-Beans
+#@in Fruits
+#@in remove-Fruits
+#@in Grains
+#@in remove-Grains
+#@in Juices
+#@in remove-Juices
+#@in Mushrooms
+#@in remove-Mushrooms
+#@in PetFood
+#@in remove-PetFood
+#@in Tofu
+#@in remove-Tofu
+#@in WildHarvested
+#@in remove-WildHarvested
+#@in updateTime
+#@in remove-updateTime
+#@out CleanData
+#@end CombineDataCleaningChanges
+#@end Parallel_OR

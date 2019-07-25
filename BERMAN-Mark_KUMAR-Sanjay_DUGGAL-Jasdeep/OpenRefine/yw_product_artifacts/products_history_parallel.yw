@@ -1,0 +1,605 @@
+#@begin Parallel_OR #@desc Parallel OpenRefine Workflow
+#@param expression:value.trim()
+#@param expression:grel:value.trim()
+#@param expression:grel:value.replace('N','')
+#@param expression:value
+#@in Honey_1
+#@in Nursery_2
+#@in Grains_1
+#@in Meat
+#@in Organic_4
+#@in Seafood_2
+#@in Herbs
+#@in Cheese_2
+#@in Organic_2
+#@in Honey_2
+#@in Cheese_1
+#@in Tofu_2
+#@in Trees_1
+#@in Soap_1
+#@in Plants_1
+#@in Beans_1
+#@in Honey
+#@in Poultry_2
+#@in Mushrooms_2
+#@in Crafts_2
+#@in PetFood_2
+#@in Flowers_2
+#@in FMID_1
+#@in Bakedgoods_1
+#@in Eggs
+#@in Beans
+#@in Eggs_1
+#@in Vegetables
+#@in Wine
+#@in Mushrooms
+#@in Wine_2
+#@in Juices_1
+#@in Grains
+#@in Prepared_2
+#@in Trees
+#@in Crafts
+#@in Plants_2
+#@in Tofu
+#@in Jams_1
+#@in Prepared
+#@in FMID
+#@in Bakedgoods_2
+#@in Flowers_1
+#@in Mushrooms_1
+#@in Soap_2
+#@in Maple
+#@in Plants
+#@in WildHarvested
+#@in Prepared_1
+#@in Meat_2
+#@in Poultry_1
+#@in Cheese
+#@in Coffee_1
+#@in Organic_1
+#@in Juices_2
+#@in Wine_1
+#@in Bakedgoods
+#@in Organic_3
+#@in Jams_2
+#@in Seafood_1
+#@in Nuts
+#@in Eggs_2
+#@in Nursery
+#@in Fruits_2
+#@in Crafts_1
+#@in Herbs_1
+#@in Jams
+#@in Vegetables_1
+#@in Organic
+#@in Beans_2
+#@in Meat_1
+#@in Flowers
+#@in WildHarvested_2
+#@in Soap
+#@in Coffee
+#@in Herbs_2
+#@in Juices
+#@in Seafood
+#@in Maple_1
+#@in Poultry
+#@in WildHarvested_1
+#@in PetFood_1
+#@in PetFood
+#@in Fruits
+#@in Grains_2
+#@in Vegetables_2
+#@in Tofu_1
+#@in Nursery_1
+#@in Nuts_2
+#@in Nuts_1
+#@in Trees_2
+#@in Coffee_2
+#@in Fruits_1
+#@in Maple_2
+#@out CleanData
+#@begin core/mass-edit0 #@desc Mass edit cells in column Organic
+#@param expression:value
+#@in Organic
+#@out Organic_1
+#@end core/mass-edit0
+#@begin core/text-transform1 #@desc Text transform on cells in column Organic using expression value.trim()
+#@param expression:value.trim()
+#@in Organic_1
+#@out Organic_2
+#@end core/text-transform1
+#@begin core/text-transform2 #@desc Text transform on cells in column FMID using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in FMID
+#@out FMID_1
+#@end core/text-transform2
+#@begin core/text-transform3 #@desc Text transform on cells in column Crafts using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Crafts
+#@out Crafts_1
+#@end core/text-transform3
+#@begin core/text-transform4 #@desc Text transform on cells in column Cheese using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Cheese
+#@out Cheese_1
+#@end core/text-transform4
+#@begin core/text-transform5 #@desc Text transform on cells in column Flowers using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Flowers
+#@out Flowers_1
+#@end core/text-transform5
+#@begin core/text-transform6 #@desc Text transform on cells in column Organic using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Organic_2
+#@out Organic_3
+#@end core/text-transform6
+#@begin core/text-transform7 #@desc Text transform on cells in column Bakedgoods using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Bakedgoods
+#@out Bakedgoods_1
+#@end core/text-transform7
+#@begin core/text-transform8 #@desc Text transform on cells in column Honey using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Honey
+#@out Honey_1
+#@end core/text-transform8
+#@begin core/text-transform9 #@desc Text transform on cells in column Vegetables using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Vegetables
+#@out Vegetables_1
+#@end core/text-transform9
+#@begin core/text-transform10 #@desc Text transform on cells in column Herbs using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Herbs
+#@out Herbs_1
+#@end core/text-transform10
+#@begin core/text-transform11 #@desc Text transform on cells in column Seafood using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Seafood
+#@out Seafood_1
+#@end core/text-transform11
+#@begin core/text-transform12 #@desc Text transform on cells in column Eggs using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Eggs
+#@out Eggs_1
+#@end core/text-transform12
+#@begin core/text-transform13 #@desc Text transform on cells in column Nuts using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Nuts
+#@out Nuts_1
+#@end core/text-transform13
+#@begin core/text-transform14 #@desc Text transform on cells in column Nursery using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Nursery
+#@out Nursery_1
+#@end core/text-transform14
+#@begin core/text-transform15 #@desc Text transform on cells in column Meat using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Meat
+#@out Meat_1
+#@end core/text-transform15
+#@begin core/text-transform16 #@desc Text transform on cells in column Maple using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Maple
+#@out Maple_1
+#@end core/text-transform16
+#@begin core/text-transform17 #@desc Text transform on cells in column Jams using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Jams
+#@out Jams_1
+#@end core/text-transform17
+#@begin core/text-transform18 #@desc Text transform on cells in column Trees using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Trees
+#@out Trees_1
+#@end core/text-transform18
+#@begin core/text-transform19 #@desc Text transform on cells in column Soap using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Soap
+#@out Soap_1
+#@end core/text-transform19
+#@begin core/text-transform20 #@desc Text transform on cells in column Prepared using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Prepared
+#@out Prepared_1
+#@end core/text-transform20
+#@begin core/text-transform21 #@desc Text transform on cells in column Poultry using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Poultry
+#@out Poultry_1
+#@end core/text-transform21
+#@begin core/text-transform22 #@desc Text transform on cells in column Plants using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Plants
+#@out Plants_1
+#@end core/text-transform22
+#@begin core/text-transform23 #@desc Text transform on cells in column Grains using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Grains
+#@out Grains_1
+#@end core/text-transform23
+#@begin core/text-transform24 #@desc Text transform on cells in column Fruits using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Fruits
+#@out Fruits_1
+#@end core/text-transform24
+#@begin core/text-transform25 #@desc Text transform on cells in column Beans using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Beans
+#@out Beans_1
+#@end core/text-transform25
+#@begin core/text-transform26 #@desc Text transform on cells in column Coffee using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Coffee
+#@out Coffee_1
+#@end core/text-transform26
+#@begin core/text-transform27 #@desc Text transform on cells in column Wine using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Wine
+#@out Wine_1
+#@end core/text-transform27
+#@begin core/text-transform28 #@desc Text transform on cells in column WildHarvested using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in WildHarvested
+#@out WildHarvested_1
+#@end core/text-transform28
+#@begin core/text-transform29 #@desc Text transform on cells in column Tofu using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Tofu
+#@out Tofu_1
+#@end core/text-transform29
+#@begin core/text-transform30 #@desc Text transform on cells in column PetFood using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in PetFood
+#@out PetFood_1
+#@end core/text-transform30
+#@begin core/text-transform31 #@desc Text transform on cells in column Mushrooms using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Mushrooms
+#@out Mushrooms_1
+#@end core/text-transform31
+#@begin core/text-transform32 #@desc Text transform on cells in column Juices using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Juices
+#@out Juices_1
+#@end core/text-transform32
+#@begin core/text-transform33 #@desc Text transform on cells in column Organic using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Organic_3
+#@out Organic_4
+#@end core/text-transform33
+#@begin core/text-transform34 #@desc Text transform on cells in column Crafts using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Crafts_1
+#@out Crafts_2
+#@end core/text-transform34
+#@begin core/text-transform35 #@desc Text transform on cells in column Cheese using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Cheese_1
+#@out Cheese_2
+#@end core/text-transform35
+#@begin core/text-transform36 #@desc Text transform on cells in column Bakedgoods using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Bakedgoods_1
+#@out Bakedgoods_2
+#@end core/text-transform36
+#@begin core/text-transform37 #@desc Text transform on cells in column Vegetables using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Vegetables_1
+#@out Vegetables_2
+#@end core/text-transform37
+#@begin core/text-transform38 #@desc Text transform on cells in column Herbs using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Herbs_1
+#@out Herbs_2
+#@end core/text-transform38
+#@begin core/text-transform39 #@desc Text transform on cells in column Seafood using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Seafood_1
+#@out Seafood_2
+#@end core/text-transform39
+#@begin core/text-transform40 #@desc Text transform on cells in column Flowers using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Flowers_1
+#@out Flowers_2
+#@end core/text-transform40
+#@begin core/text-transform41 #@desc Text transform on cells in column Eggs using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Eggs_1
+#@out Eggs_2
+#@end core/text-transform41
+#@begin core/text-transform42 #@desc Text transform on cells in column Nursery using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Nursery_1
+#@out Nursery_2
+#@end core/text-transform42
+#@begin core/text-transform43 #@desc Text transform on cells in column Meat using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Meat_1
+#@out Meat_2
+#@end core/text-transform43
+#@begin core/text-transform44 #@desc Text transform on cells in column Maple using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Maple_1
+#@out Maple_2
+#@end core/text-transform44
+#@begin core/text-transform45 #@desc Text transform on cells in column Jams using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Jams_1
+#@out Jams_2
+#@end core/text-transform45
+#@begin core/text-transform46 #@desc Text transform on cells in column Honey using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Honey_1
+#@out Honey_2
+#@end core/text-transform46
+#@begin core/text-transform47 #@desc Text transform on cells in column Soap using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Soap_1
+#@out Soap_2
+#@end core/text-transform47
+#@begin core/text-transform48 #@desc Text transform on cells in column Prepared using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Prepared_1
+#@out Prepared_2
+#@end core/text-transform48
+#@begin core/text-transform49 #@desc Text transform on cells in column Poultry using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Poultry_1
+#@out Poultry_2
+#@end core/text-transform49
+#@begin core/text-transform50 #@desc Text transform on cells in column Plants using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Plants_1
+#@out Plants_2
+#@end core/text-transform50
+#@begin core/text-transform51 #@desc Text transform on cells in column Nuts using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Nuts_1
+#@out Nuts_2
+#@end core/text-transform51
+#@begin core/text-transform52 #@desc Text transform on cells in column Fruits using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Fruits_1
+#@out Fruits_2
+#@end core/text-transform52
+#@begin core/text-transform53 #@desc Text transform on cells in column Beans using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Beans_1
+#@out Beans_2
+#@end core/text-transform53
+#@begin core/text-transform54 #@desc Text transform on cells in column Coffee using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Coffee_1
+#@out Coffee_2
+#@end core/text-transform54
+#@begin core/text-transform55 #@desc Text transform on cells in column Wine using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Wine_1
+#@out Wine_2
+#@end core/text-transform55
+#@begin core/text-transform56 #@desc Text transform on cells in column Trees using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Trees_1
+#@out Trees_2
+#@end core/text-transform56
+#@begin core/text-transform57 #@desc Text transform on cells in column Tofu using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Tofu_1
+#@out Tofu_2
+#@end core/text-transform57
+#@begin core/text-transform58 #@desc Text transform on cells in column PetFood using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in PetFood_1
+#@out PetFood_2
+#@end core/text-transform58
+#@begin core/text-transform59 #@desc Text transform on cells in column Mushrooms using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Mushrooms_1
+#@out Mushrooms_2
+#@end core/text-transform59
+#@begin core/text-transform60 #@desc Text transform on cells in column Juices using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Juices_1
+#@out Juices_2
+#@end core/text-transform60
+#@begin core/text-transform61 #@desc Text transform on cells in column Grains using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in Grains_1
+#@out Grains_2
+#@end core/text-transform61
+#@begin core/text-transform62 #@desc Text transform on cells in column WildHarvested using expression grel:value.replace('N','')
+#@param expression:grel:value.replace('N','')
+#@in WildHarvested_1
+#@out WildHarvested_2
+#@end core/text-transform62
+#@begin core/text-transform63 #@desc Text transform on cells in column FMID using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in FMID_1
+#@out FMID_2
+#@end core/text-transform63
+#@begin core/text-transform64 #@desc Text transform on cells in column Organic using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Organic_4
+#@out Organic_5
+#@end core/text-transform64
+#@begin core/text-transform65 #@desc Text transform on cells in column Cheese using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Cheese_2
+#@out Cheese_3
+#@end core/text-transform65
+#@begin core/text-transform66 #@desc Text transform on cells in column Seafood using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Seafood_2
+#@out Seafood_3
+#@end core/text-transform66
+#@begin core/text-transform67 #@desc Text transform on cells in column Flowers using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Flowers_2
+#@out Flowers_3
+#@end core/text-transform67
+#@begin core/text-transform68 #@desc Text transform on cells in column Crafts using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Crafts_2
+#@out Crafts_3
+#@end core/text-transform68
+#@begin core/text-transform69 #@desc Text transform on cells in column Eggs using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Eggs_2
+#@out Eggs_3
+#@end core/text-transform69
+#@begin core/text-transform70 #@desc Text transform on cells in column Bakedgoods using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Bakedgoods_2
+#@out Bakedgoods_3
+#@end core/text-transform70
+#@begin core/text-transform71 #@desc Text transform on cells in column Maple using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Maple_2
+#@out Maple_3
+#@end core/text-transform71
+#@begin core/text-transform72 #@desc Text transform on cells in column Jams using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Jams_2
+#@out Jams_3
+#@end core/text-transform72
+#@begin core/text-transform73 #@desc Text transform on cells in column Honey using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Honey_2
+#@out Honey_3
+#@end core/text-transform73
+#@begin core/text-transform74 #@desc Text transform on cells in column Vegetables using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Vegetables_2
+#@out Vegetables_3
+#@end core/text-transform74
+#@begin core/text-transform75 #@desc Text transform on cells in column Herbs using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Herbs_2
+#@out Herbs_3
+#@end core/text-transform75
+#@begin core/text-transform76 #@desc Text transform on cells in column Poultry using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Poultry_2
+#@out Poultry_3
+#@end core/text-transform76
+#@begin core/text-transform77 #@desc Text transform on cells in column Plants using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Plants_2
+#@out Plants_3
+#@end core/text-transform77
+#@begin core/text-transform78 #@desc Text transform on cells in column Nuts using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Nuts_2
+#@out Nuts_3
+#@end core/text-transform78
+#@begin core/text-transform79 #@desc Text transform on cells in column Nursery using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Nursery_2
+#@out Nursery_3
+#@end core/text-transform79
+#@begin core/text-transform80 #@desc Text transform on cells in column Meat using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Meat_2
+#@out Meat_3
+#@end core/text-transform80
+#@begin core/text-transform81 #@desc Text transform on cells in column Coffee using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Coffee_2
+#@out Coffee_3
+#@end core/text-transform81
+#@begin core/text-transform82 #@desc Text transform on cells in column Wine using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Wine_2
+#@out Wine_3
+#@end core/text-transform82
+#@begin core/text-transform83 #@desc Text transform on cells in column Trees using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Trees_2
+#@out Trees_3
+#@end core/text-transform83
+#@begin core/text-transform84 #@desc Text transform on cells in column Soap using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Soap_2
+#@out Soap_3
+#@end core/text-transform84
+#@begin core/text-transform85 #@desc Text transform on cells in column Prepared using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Prepared_2
+#@out Prepared_3
+#@end core/text-transform85
+#@begin core/text-transform86 #@desc Text transform on cells in column Mushrooms using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Mushrooms_2
+#@out Mushrooms_3
+#@end core/text-transform86
+#@begin core/text-transform87 #@desc Text transform on cells in column Juices using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Juices_2
+#@out Juices_3
+#@end core/text-transform87
+#@begin core/text-transform88 #@desc Text transform on cells in column Grains using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Grains_2
+#@out Grains_3
+#@end core/text-transform88
+#@begin core/text-transform89 #@desc Text transform on cells in column Fruits using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Fruits_2
+#@out Fruits_3
+#@end core/text-transform89
+#@begin core/text-transform90 #@desc Text transform on cells in column Beans using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Beans_2
+#@out Beans_3
+#@end core/text-transform90
+#@begin core/text-transform91 #@desc Text transform on cells in column WildHarvested using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in WildHarvested_2
+#@out WildHarvested_3
+#@end core/text-transform91
+#@begin core/text-transform92 #@desc Text transform on cells in column Tofu using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in Tofu_2
+#@out Tofu_3
+#@end core/text-transform92
+#@begin core/text-transform93 #@desc Text transform on cells in column PetFood using expression grel:value.trim()
+#@param expression:grel:value.trim()
+#@in PetFood_2
+#@out PetFood_3
+#@end core/text-transform93
+#@begin CombineDataCleaningChanges
+#@in Organic_5
+#@in FMID_2
+#@in Crafts_3
+#@in Cheese_3
+#@in Flowers_3
+#@in Bakedgoods_3
+#@in Honey_3
+#@in Vegetables_3
+#@in Herbs_3
+#@in Seafood_3
+#@in Eggs_3
+#@in Nuts_3
+#@in Nursery_3
+#@in Meat_3
+#@in Maple_3
+#@in Jams_3
+#@in Trees_3
+#@in Soap_3
+#@in Prepared_3
+#@in Poultry_3
+#@in Plants_3
+#@in Grains_3
+#@in Fruits_3
+#@in Beans_3
+#@in Coffee_3
+#@in Wine_3
+#@in WildHarvested_3
+#@in Tofu_3
+#@in PetFood_3
+#@in Mushrooms_3
+#@in Juices_3
+#@out CleanData
+#@end CombineDataCleaningChanges
+#@end Parallel_OR

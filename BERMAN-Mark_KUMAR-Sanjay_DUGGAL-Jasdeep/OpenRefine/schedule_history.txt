@@ -1,0 +1,969 @@
+[
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "FMID",
+      "MarketName",
+      "OtherMedia",
+      "street",
+      "city",
+      "County",
+      "State",
+      "zip",
+      "Season1Date",
+      "Season1Time",
+      "Season2Date",
+      "Season2Time",
+      "Season3Date",
+      "Season3Time",
+      "Season4Date",
+      "Season4Time",
+      "x",
+      "y",
+      "Location",
+      "SFMNP"
+    ]
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column SFMNP",
+    "columnName": "SFMNP"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Season4Date using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Season4Date",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Season3Date using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Season3Date",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column season at index 15 based on column Season4Date using expression grel:value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "newColumnName": "season",
+    "columnInsertIndex": 15,
+    "baseColumnName": "Season4Date",
+    "expression": "grel:value",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression grel:cells.Season3Date.value",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "season",
+          "expression": "value",
+          "columnName": "season",
+          "invert": false,
+          "selection": [],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": true,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "grel:cells.Season3Date.value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression grel:cells.Season2Date.value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "grel:cells.Season2Date.value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression grel:cells.Season1Date.value",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "season",
+          "expression": "value",
+          "columnName": "season",
+          "invert": false,
+          "selection": [],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": true,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "grel:cells.Season1Date.value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Start Date 1/1/13 to End Date 12/31/13"
+        ],
+        "to": "1/1/13 to 12/31/13"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression value.replace(/(?:(((Jan(uary)?|Ma(r(ch)?|y)|Jul(y)?|Aug(ust)?|Oct(ober)?|Dec(ember)?)\\ 31)|((Jan(uary)?|Ma(r(ch)?|y)|Apr(il)?|Ju((ly?)|(ne?))|Aug(ust)?|Oct(ober)?|(Sept|Nov|Dec)(ember)?)\\ (0?[1-9]|([12]\\d)|30))|(Feb(ruary)?\\ (0?[1-9]|1\\d|2[0-8]|(29(?=,\\ ((1[6-9]|[2-9]\\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))))\\,\\s+((1[6-9]|[2-9]\\d)\\d{2}))/,\"$1\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value.replace(/(?:(((Jan(uary)?|Ma(r(ch)?|y)|Jul(y)?|Aug(ust)?|Oct(ober)?|Dec(ember)?)\\ 31)|((Jan(uary)?|Ma(r(ch)?|y)|Apr(il)?|Ju((ly?)|(ne?))|Aug(ust)?|Oct(ober)?|(Sept|Nov|Dec)(ember)?)\\ (0?[1-9]|([12]\\d)|30))|(Feb(ruary)?\\ (0?[1-9]|1\\d|2[0-8]|(29(?=,\\ ((1[6-9]|[2-9]\\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)))))))\\,\\s+((1[6-9]|[2-9]\\d)\\d{2}))/,\"$1\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression value.replace(/\\bto\\b/,\"-\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value.replace(/\\bto\\b/,\"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression value.replace(/([a-zA-Z]+)\\s+\\d+/,\"$1\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value.replace(/([a-zA-Z]+)\\s+\\d+/,\"$1\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression value.replace(/(0[1-9]|1[012])[- .\\/](0[1-9]|[12][0-9]|3[01])[-.\\/](19|20)\\d\\d/,\"$1\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value.replace(/(0[1-9]|1[012])[- .\\/](0[1-9]|[12][0-9]|3[01])[-.\\/](19|20)\\d\\d/,\"$1\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression grel:value.replace('01','January').replace('02','February').replace('03','March').replace('04','April').replace('05','May').replace('06','June').replace('07','July').replace('08','August').replace('09','September').replace('10','October').replace('11','November').replace('12','December')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "grel:value.replace('01','January').replace('02','February').replace('03','March').replace('04','April').replace('05','May').replace('06','June').replace('07','July').replace('08','August').replace('09','September').replace('10','October').replace('11','November').replace('12','December')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "1/1/13 - December/31/13"
+        ],
+        "to": "January - December"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "April - "
+        ],
+        "to": "April "
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "April - April"
+        ],
+        "to": "April"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "August - "
+        ],
+        "to": "August"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Season4Time using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Season4Time",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Season3Time using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Season3Time",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Season2Time using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Season2Time",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Season1Time using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Season1Time",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column seasonTime at index 17 based on column Season4Time using expression grel:value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "newColumnName": "seasonTime",
+    "columnInsertIndex": 17,
+    "baseColumnName": "Season4Time",
+    "expression": "grel:value",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column seasonTime using expression grel:cells['Season3Time'].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "seasonTime",
+          "expression": "value",
+          "columnName": "seasonTime",
+          "invert": false,
+          "selection": [],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": true,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "seasonTime",
+    "expression": "grel:cells['Season3Time'].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column seasonTime using expression grel:cells['Season2Time'].value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "seasonTime",
+    "expression": "grel:cells['Season2Time'].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column seasonTime using expression grel:cells['Season1Time'].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "seasonTime",
+          "expression": "value",
+          "columnName": "seasonTime",
+          "invert": false,
+          "selection": [],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": true,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "seasonTime",
+    "expression": "grel:cells['Season1Time'].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-move",
+    "description": "Move column season to position 16",
+    "columnName": "season",
+    "index": 16
+  },
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "FMID",
+      "MarketName",
+      "OtherMedia",
+      "street",
+      "city",
+      "County",
+      "State",
+      "zip",
+      "season",
+      "seasonTime",
+      "x",
+      "y",
+      "Location"
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column x using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "x",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column y using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "y",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column season using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column season by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season",
+    "guessCellType": true,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": "-",
+    "regex": true,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Y"
+        ],
+        "to": ""
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "N"
+        ],
+        "to": ""
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "June ",
+          "June",
+          "June  "
+        ],
+        "to": "June "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "",
+          " "
+        ],
+        "to": ""
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "November ",
+          "November"
+        ],
+        "to": "November "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "May ",
+          "May"
+        ],
+        "to": "May "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "August ",
+          "August"
+        ],
+        "to": "August "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "February ",
+          "February"
+        ],
+        "to": "February "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "July ",
+          "July"
+        ],
+        "to": "July "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "April ",
+          "April"
+        ],
+        "to": "April "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "March ",
+          "March"
+        ],
+        "to": "March "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "January ",
+          "January"
+        ],
+        "to": "January "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "December ",
+          "December"
+        ],
+        "to": "December "
+      },
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "October ",
+          "October"
+        ],
+        "to": "October "
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Aug "
+        ],
+        "to": "August"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "August ",
+          "August"
+        ],
+        "to": "August"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " Nov"
+        ],
+        "to": "November"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " Oct"
+        ],
+        "to": "October"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " Octobsr"
+        ],
+        "to": " October"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " Oct. 13, 2January1"
+        ],
+        "to": "January"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " Sept. 8"
+        ],
+        "to": " September"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " Sept"
+        ],
+        "to": " September"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " January"
+        ],
+        "to": "January"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " November"
+        ],
+        "to": "November"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column season 2",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "season 2",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          " October"
+        ],
+        "to": "October"
+      }
+    ]
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column season 1 to seasonOpenning",
+    "oldColumnName": "season 1",
+    "newColumnName": "seasonOpenning"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column season 2 to seasonClosing",
+    "oldColumnName": "season 2",
+    "newColumnName": "seasonClosing"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column seasonOpenning using expression value.toDate()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "seasonOpenning",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column OtherMedia",
+    "columnName": "OtherMedia"
+  },
+  {
+    "op": "core/column-move",
+    "description": "Move column Location to position 0",
+    "columnName": "Location",
+    "index": 0
+  },
+  {
+    "op": "core/column-move",
+    "description": "Move column Location to position 1",
+    "columnName": "Location",
+    "index": 1
+  },
+  {
+    "op": "core/column-move",
+    "description": "Move column Location to position 2",
+    "columnName": "Location",
+    "index": 2
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column MarketName",
+    "columnName": "MarketName"
+  },
+  {
+    "op": "core/column-reorder",
+    "description": "Reorder columns",
+    "columnNames": [
+      "FMID",
+      "season",
+      "seasonOpenning",
+      "seasonClosing",
+      "seasonTime"
+    ]
+  }
+]
